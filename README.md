@@ -2,7 +2,7 @@
 
 Created with love by: `Khoi Phan`
   
-View online at: ``
+View online at: `https://twitter-clone-coderschool.netlify.com`
   
 Clone of Twitter' home page. 
 
