@@ -4,6 +4,42 @@
 body {
     margin: 0;
     font-family: evfont;
-    padding-top: 40px;
     background-color: lightskyblue;
+}
+
+main > div{
+    padding:15px;
+}
+
+.row {
+    margin: 0;
+}
+
+textarea {
+    width: auto;
+    height: 35px;
+}
+
+
+.tweetBtn {
+    background-color: transparent;
+    border: none;
+    color: black;
+    padding: 0px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.tweetBtn:hover {
+    color:royalblue;
+}
+
+.tweetButtonsSection > button {
+    color: white;
+}
+.tweetButtonsSection > button:hover {
+    color: pink;
+}
+
+.isLiked {
+    color:red !important;
 }
