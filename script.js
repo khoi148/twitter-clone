@@ -46,6 +46,8 @@ function tweet() {
             id: idCounter,
             content: textArea.value,
             hashtags: [],
+            retweets: [],
+            originTweetId: null,
             liked: false
         }
         idCounter++;
@@ -75,8 +77,8 @@ function render() {
             <div>${item.content}</div>
             <div class="d-flex tweetButtonsSection">
                 <button class="btn ${isLikedVar} tweetBtn mx-2" onClick="tweetLiked(this.id)" id="${item.id}"><i class="fa fa-heart"></i></button>
-                <button class="btn tweetBtn mx-2"><i class="fa fa-bars"></i></button>
-                <button class="btn tweetBtn mx-2" onClick="tweetDelete(this.value)" value=${item.id}><i class="fa fa-trash"></i></button>
+                <button class="btn tweetBtn mx-2" onClick="retweet(this.value)" value="${item.id}"><i class="fa fa-bars"></i></button>
+                <button class="btn tweetBtn mx-2" onClick="tweetDelete(${item.id})"><i class="fa fa-trash"></i></button>
                 <button class="btn tweetBtn mx-2"><i class="fa fa-close"></i></button>
             </div>
         </div>
@@ -98,12 +100,31 @@ function tweetLiked(id) {
     console.log(listOfTweets);
 }
 function tweetDelete(id) {
-    let indexOfTweet;
-    for(let i = 0; i<listOfTweets.length;i++) {
-        if(listOfTweets[i].id == id) 
-            indexOfTweet=i;
-    }
-    listOfTweets.splice(indexOfTweet, 1);
+    listOfTweets = listOfTweets.filter(item => item.id != id & item.originTweetId != id);
     console.log(listOfTweets);
+    render();
+}
+
+function retweet(id) {
+    //find tweet
+    let originTweet = 
+    listOfTweets.find(item => item.id == id);//reference to actual object in array
+    console.log(originTweet);
+    //make new tweet with same contents
+    idCounter++;
+    let newRetweet = {
+        id: idCounter,
+        content: originTweet.content,
+        hashtags: [],
+        retweets: [],
+        originTweetId: originTweet.id,
+        liked: false
+    }
+    //push tweet to listOfTweets array
+    listOfTweets.push(newRetweet);
+    //Add a ref to the retweets array of the original tweet
+    originTweet.retweets.push(newRetweet.id);
+
+    //render
     render();
 }
