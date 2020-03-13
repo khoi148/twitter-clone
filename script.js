@@ -46,7 +46,6 @@ function tweet() {
             id: idCounter,
             content: textArea.value,
             hashtags: [],
-            retweets: [],
             originTweetId: null,
             liked: false
         }
@@ -107,8 +106,8 @@ function tweetDelete(id) {
 
 function retweet(id) {
     //find tweet
-    let originTweet = 
-    listOfTweets.find(item => item.id == id);//reference to actual object in array
+    let originTweet = listOfTweets.find(item => item.id == id);//reference to actual object in array
+    let originIndex = listOfTweets.indexOf(originTweet);
     console.log(originTweet);
     //make new tweet with same contents
     idCounter++;
@@ -116,14 +115,16 @@ function retweet(id) {
         id: idCounter,
         content: originTweet.content,
         hashtags: [],
-        retweets: [],
         originTweetId: originTweet.id,
         liked: false
     }
     //push tweet to listOfTweets array
-    listOfTweets.push(newRetweet);
+    // listOfTweets.push(newRetweet);
+    console.log(listOfTweets.length);
+    listOfTweets.splice(originIndex+1, 0, newRetweet);
+    console.log(listOfTweets);
     //Add a ref to the retweets array of the original tweet
-    originTweet.retweets.push(newRetweet.id);
+    // originTweet.retweets.push(newRetweet.id);
 
     //render
     render();
