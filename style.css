@@ -43,3 +43,34 @@ textarea {
 .isLiked {
     color:red !important;
 }
+
+.mentions {
+    color: blue;
+    margin: 0;
+    padding: 0;
+}
+.hashtags {
+    color:red;
+    margin: 0;
+    padding: 0;
+}
+
+
+.meta-tweet {
+    border: 1px solid black;
+    height: 200px;
+}
+
+.trends {
+    margin-top: 30px;
+    border: 1px solid black;
+    height: 350px;
+}
+
+ul li {list-style-type: none;}
+
+.following {
+    margin-top: 30px;
+    border: 1px solid black;
+    height: 350px;
+}
