@@ -45,9 +45,9 @@ let updateCountDisplay = () => displayLetterCount(countLettersRemaining());
 textArea.addEventListener('input', updateCountDisplay); 
 
 
-function render() {
-    console.log(listOfTweets);
-    let result = listOfTweets.map( (item,index) => {
+function render(list) {
+    console.log(list);
+    let result = list.map( (item,index) => {
         // console.log('obj: ',item);
 
         // console.log('index: ', index);
@@ -56,11 +56,10 @@ function render() {
         
         //replace @ and # strings with <a> and <span> tags
         
-        let content = item.content.replace(/#(\w+)/g, (match) => `<a href="#" class="hashtags">${match}</a>`);
+        let content = item.content.replace(/#(\w+)/g, (match) => `<a href="#" class="hashtags" onclick="filterHashtags('${match}')">${match}</a>`);
         
         content = content.replace(/@(\w+)/g, '<span class="mentions">@$1</span>');
 
-<<<<<<< HEAD
         //handle checking the tweet for img links. Add in img if it exists
         let imgLink;
         let arrayOfURLs = returnURL(item.content);
@@ -90,37 +89,10 @@ function render() {
             </div>
         </div>
         </div>`;        
-=======
-        //expand possible URLs
-        /*let regex= '/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g))'; 
-        str.match(regex);
-        isValidURL(str);
-        checkURLforImage(str);*/
-
-        return `<div id="tweet" class="d-flex">
-                <div class="bg-success p-3">
-                    <img src="img/pic2.jpg" height="50" class="rounded">
-                </div>
-                <div class="flex-grow-1 bg-secondary">
-                    <div>${content}</div>
-                        <div class="d-flex tweetButtonsSection">
-                            <button class="btn ${isLikedVar} tweetBtn mx-2" onClick="tweetLiked(this.id)" id="${item.id}"><i class="fa fa-heart"></i></button>
-                            <button class="btn tweetBtn mx-2" onClick="retweet(this.value)" value="${item.id}"><i class="fa fa-bars"></i></button>
-                            <button class="btn tweetBtn mx-2" onClick="tweetDelete(${item.id})"><i class="fa fa-trash"></i></button>
-                            <button class="btn tweetBtn mx-2"><i class="fa fa-close"></i></button>
-                        </div>
-                    </div>
-                </div>`;        
->>>>>>> dc15f7729ea7972c7b16cfc527808c4ab29fa89d
     }).join('');
 
     tweetArea.innerHTML = result;
-<<<<<<< HEAD
     tweets_amt.innerHTML = `<h4>TWEETS: ${listOfTweets.length}</h4>`;
-=======
-
-    // tweets_amt.innerHTML = <h4>TWEETS: ${listOfTweets.length}</h4>;
->>>>>>> dc15f7729ea7972c7b16cfc527808c4ab29fa89d
 }
 
 function tweet() {
@@ -145,7 +117,7 @@ function tweet() {
         
         listOfTweets.push(newTweet);
 
-        render();
+        render(listOfTweets);
 
         //clear tweet
         limitReachText.innerHTML = '';
@@ -179,7 +151,7 @@ function tweetDelete(id) {
     
     console.log(listOfTweets);
     
-    render();
+    render(listOfTweets);
 };
 
 function retweet(id) {
@@ -204,7 +176,7 @@ function retweet(id) {
     //push tweet to listOfTweets array, inserting new tweet below original tweet
     listOfTweets.splice(originIndex+1, 0, newRetweet);
     
-    render();
+    render(listOfTweets);
 }
 
 // if (t.match(regex)) {
@@ -212,31 +184,20 @@ function retweet(id) {
 // } else {
 //   console.log("No match");
 // }
-<<<<<<< HEAD
 function returnURL(string) {
     //match returns an array of strings, or null
     return string.match(/(?:(?:https?|ftp):\/\/|\b(?:[a-z\d]+\.))(?:(?:[^\s()<>]+|\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))?\))+(?:\((?:[^\s()<>]+|(?:\(?:[^\s()<>]+\)))?\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))?/ig);
 }
 
-=======
-
-function isValidURL(string) {
-    var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
-    
-    return (res !== null)
-};
-
-function checkURLforImage(url) {
-    return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
-};
-
-
-var testCase6 = "asdas https://stackoverflow.com/";
-
-console.log('valid url '+isValidURL(testCase6)+', is Image: '+checkURLforImage(testCase6));     // return true
-
-
-// var testCase8 = "https://s3.amazonaws.com/images.seroundtable.com/google-submit-url-1516800645.jpg";
-// console.log('valid url '+isValidURL(testCase8)+' is Image: '+checkURLforImage(testCase8)); // return true
-
->>>>>>> dc15f7729ea7972c7b16cfc527808c4ab29fa89d
+function filterHashtags(tag) {
+    console.log(tag);
+    //get only tweets with the same hashtag
+    let array = listOfTweets.filter(item => {
+        for(x in item.hashtags) {
+            console.log(item.hashtags[x]);
+            if(item.hashtags[x] == tag)
+                return true;
+        }
+    });
+    render(array);
+}
