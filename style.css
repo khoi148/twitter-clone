@@ -5,6 +5,7 @@ body {
     margin: 0;
     font-family: evfont;
     background-color: lightskyblue;
+    white-space: normal;
 }
 
 main > div{
@@ -54,7 +55,16 @@ textarea {
     margin: 0;
     padding: 0;
 }
-
+.wrapword {
+     /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+}
 
 .meta-tweet {
     border: 1px solid black;

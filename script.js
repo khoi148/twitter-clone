@@ -48,19 +48,27 @@ function render() {
         let content = item.content.replace(/#(\w+)/g, (match) => `<a href="#" class="hashtags">${match}</a>`);
         content = content.replace(/@(\w+)/g, '<span class="mentions">@$1</span>');
 
-        //expand possible URLs
-        /*let regex= '/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g))'; 
-        str.match(regex);
-        isValidURL(str);
-        checkURLforImage(str);*/
-
+        //handle checking the tweet for img links. Add in img if it exists
+        let imgLink;
+        let arrayOfURLs = returnURL(item.content);
+        if(arrayOfURLs!== null) {//returns ['string']. Array of matches, of URLs
+            arrayOfURLs.find( (match) => {
+                if(match.match(/\.(jpeg|jpg|gif|png)/) !== null) {
+                    let post = match.match(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+\.(png|jpg|jpeg|gif)/g)[0];
+                    imgLink = `<img class="img-fluid" src="${post}">`;
+                    return true;
+                }
+            });
+        } 
+        arrayOfURLs !== null ? imageSection = `<div class="">${imgLink}</div>` : imageSection='';
 
         return `<div id="tweet" class="d-flex">
         <div class="bg-success p-3">
             <img src="img/pic2.jpg" height="50" class="rounded">
         </div>
-        <div class="flex-grow-1 bg-secondary">
-            <div>${content}</div>
+        <div class="flex-grow-1 bg-secondary" style="width: 300px;">
+            <div class="wrapword bg-success">${content}</div>
+            ${imageSection}
             <div class="d-flex tweetButtonsSection">
                 <button class="btn ${isLikedVar} tweetBtn mx-2" onClick="tweetLiked(this.id)" id="${item.id}"><i class="fa fa-heart"></i></button>
                 <button class="btn tweetBtn mx-2" onClick="retweet(this.value)" value="${item.id}"><i class="fa fa-bars"></i></button>
@@ -71,7 +79,7 @@ function render() {
         </div>`;        
     }).join('');
     tweetArea.innerHTML = result;
-    // tweets_amt.innerHTML = <h4>TWEETS: ${listOfTweets.length}</h4>;
+    tweets_amt.innerHTML = `<h4>TWEETS: ${listOfTweets.length}</h4>`;
 }
 
 function tweet() {
@@ -144,20 +152,8 @@ function retweet(id) {
 // } else {
 //   console.log("No match");
 // }
-
-function isValidURL(string) {
-    var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
-    return (res !== null)
-};
-  function checkURLforImage(url) {
-    return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
+function returnURL(string) {
+    //match returns an array of strings, or null
+    return string.match(/(?:(?:https?|ftp):\/\/|\b(?:[a-z\d]+\.))(?:(?:[^\s()<>]+|\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))?\))+(?:\((?:[^\s()<>]+|(?:\(?:[^\s()<>]+\)))?\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))?/ig);
 }
-
-
-var testCase6 = "asdas https://stackoverflow.com/";
-console.log('valid url '+isValidURL(testCase6)+', is Image: '+checkURLforImage(testCase6)); // return true
-
-
-// var testCase8 = "https://s3.amazonaws.com/images.seroundtable.com/google-submit-url-1516800645.jpg";
-// console.log('valid url '+isValidURL(testCase8)+' is Image: '+checkURLforImage(testCase8)); // return true
 
