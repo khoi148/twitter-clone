@@ -44,7 +44,6 @@ let updateCountDisplay = () => displayLetterCount(countLettersRemaining());
 
 textArea.addEventListener('input', updateCountDisplay);
 
-
 function render(list) {
     console.log(list);
     let result = list.map((item, index) => {
@@ -92,6 +91,7 @@ function render(list) {
     }).join('');
 
     tweetArea.innerHTML = result;
+    
     tweets_amt.innerHTML = `<h4>TWEETS: ${listOfTweets.length}</h4>`;
 }
 

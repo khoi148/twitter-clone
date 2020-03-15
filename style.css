@@ -48,6 +48,7 @@ textarea {
 .tweetButtonsSection > button {
     color: white;
 }
+
 .tweetButtonsSection > button:hover {
     color: pink;
 }
@@ -66,6 +67,7 @@ textarea {
     margin: 0;
     padding: 0;
 }
+
 .wrapword {
      /* These are technically the same, but use both */
   overflow-wrap: break-word;
