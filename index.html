@@ -16,95 +16,121 @@
     </head>
 
     <body>
-        <main class="row">
-            <div class="col-4 border">
-                <div class="meta-tweet">
-                    <div class="bg-warning" style="display: flex; justify-content: center; align-content: center;">
-                        <img src="./img/twitter0.png" style="width: 200px;">
-                    </div>
-                    <div class="tweets_amount" style="margin-left: 20px; margin-top: 25px;"></div>
-                    <p style="text-align: center;">FOLLOWING: <span style="color: blue;">251</span> | 
-                    FOLLOWER: <span style="color: blue;">153</span>
-                    </p>
-                </div>
-
-                <div class="trends">
-                    <h2 style="margin-left: 20px; margin-top: 10px;">Trends <span style="font-size: 25px;">ciao</span></h2>
-                    <ul>
-                        <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                        <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                        <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                        <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                        <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                        <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                        <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                        <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                        <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                    </ul>
-                </div>
+        <div class="cloud-container">
+            <div id="my-clouds">
+                <marquee behavior="scroll" direction="right" scrollamount="15">
+                    <i class="fa fa-cloud" style="color:#fff;font-size:40px"></i>
+                    <section class="container">
+                        <header>
+                            <img class="bird" src="img/bird.svg" alt="bird flying">
+                        </header>
+                    </section>
+                </marquee>
+                <h1><span>T</span>witter</h1>
+                <marquee behavior="scroll" direction="left" scrollamount="10">
+                    <i class="fa fa-cloud" style="color:#f4f4f4;font-size:60px"></i>
+                    <section class="container">
+                        <header>
+                            <img class="bird" src="img/bird.svg" alt="bird flying">
+                        </header>
+                    </section>
+                </marquee>
+                <marquee behavior="scroll" direction="right" scrollamount="5">
+                    <i class="fa fa-cloud" style="color:#f4f4f4;font-size:90px"></i>
+                </marquee>
             </div>
 
-            <div class="col-4 border">
-                <div class="bg-warning p-3">
-                    <div class="d-flex border">
-                        <img src="img/pic2.jpg" height="35" class="rounded">
-                        <textarea id="contentsBox" placeholder="Remember, be nice!" class="flex-grow-1"></textarea>
+            <main class="row">
+                <div class="col-4 border">
+                    <div class="meta-tweet">
+                        <div class="bg-warning" style="display: flex; justify-content: center; align-content: center;">
+                            <img src="./img/twitter0.png" style="width: 200px;">
+                        </div>
+                        <div class="tweets_amount" style="margin-left: 20px; margin-top: 25px;"></div>
+                        <p style="text-align: center;">FOLLOWING: <span style="color: blue;">251</span> | 
+                        FOLLOWER: <span style="color: blue;">153</span>
+                        </p>
                     </div>
-                    <div class="d-flex flex-row-reverse">
-                        <button onClick="tweet()">Tweet</button>
-                    </div>
-                    <div class="d-flex flex-row-reverse">
-                        <div id="textCount">140chars</div>
-                        <div id="limitReachText"></div>
+
+                    <div class="trends">
+                        <h2 style="margin-left: 20px; margin-top: 10px;">Trends <span style="font-size: 25px;">ciao</span></h2>
+                        <ul>
+                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
+                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
+                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
+                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
+                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
+                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
+                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
+                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
+                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div id="tweetArea" class="border border-primary wrapword" class="bg-light">
-                    <div id="tweet" class="d-flex">
-                        <div class="bg-success p-3">
-                            <img src="img/pic2.jpg" height="50" class="rounded">
+                <div class="col-4 border">
+                    <div class="bg-warning p-3">
+                        <div class="d-flex border">
+                            <img src="img/pic2.jpg" height="35" class="rounded">
+                            <textarea id="contentsBox" placeholder="Remember, be nice!" class="flex-grow-1"></textarea>
                         </div>
-                        <div class="flex-grow-1 bg-secondary">
-                            <div>Lorem ipsum dolor sit amet, consectetur adipi
-                                sicing elit. Corrupti iste nulla veritatis minima dou
-                                ptatem maiores quissdfsdf dalw asinb?</div>
-                            <div class="d-flex">
-                                <button class="btn tweetBtn mx-2"><i class="fa fa-home"></i></button>
-                                <button class="btn tweetBtn mx-2"><i class="fa fa-bars"></i></button>
-                                <button class="btn tweetBtn mx-2"><i class="fa fa-trash"></i></button>
-                                <button class="btn tweetBtn mx-2"><i class="fa fa-close"></i></button>
+                        <div class="d-flex flex-row-reverse">
+                            <button onClick="tweet()">Tweet</button>
+                        </div>
+                        <div class="d-flex flex-row-reverse">
+                            <div id="textCount">140chars</div>
+                            <div id="limitReachText"></div>
+                        </div>
+                    </div>
+
+                    <div id="tweetArea" class="border border-primary wrapword" class="bg-light">
+                        <div id="tweet" class="d-flex">
+                            <div class="bg-success p-3">
+                                <img src="img/pic2.jpg" height="50" class="rounded">
+                            </div>
+                            <div class="flex-grow-1 bg-secondary">
+                                <div>Lorem ipsum dolor sit amet, consectetur adipi
+                                    sicing elit. Corrupti iste nulla veritatis minima dou
+                                    ptatem maiores quissdfsdf dalw asinb?</div>
+                                <div class="d-flex">
+                                    <button class="btn tweetBtn mx-2"><i class="fa fa-home"></i></button>
+                                    <button class="btn tweetBtn mx-2"><i class="fa fa-bars"></i></button>
+                                    <button class="btn tweetBtn mx-2"><i class="fa fa-trash"></i></button>
+                                    <button class="btn tweetBtn mx-2"><i class="fa fa-close"></i></button>
+                                </div>
+
+                                <ul class="timeline"></ul>
                             </div>
                         </div>
                     </div>
-
                 </div>
-            </div>
-            
-            <div class="col-4 border">
-                <div class="following">
-                    <h2 style="margin-left: 20px; margin-top: 10px;">Who To Follow <a href="#" style="font-size: 25px;">Refresh . View all</a></h2>
-                    <div class="follower"></div>
-                    <div class="follower"></div>
-                    <div class="follower"></div>
+                
+                <div class="col-4 border">
+                    <div class="following">
+                        <h2 style="margin-left: 20px; margin-top: 10px;">Who To Follow <a href="#" style="font-size: 25px;">Refresh . View all</a></h2>
+                        <div class="follower"></div>
+                        <div class="follower"></div>
+                        <div class="follower"></div>
+                    </div>
+                    <div class="bg-warning">
+                        <p style="margin-left: 20px; text-align: center; height: 45px; padding-bottom: 7px; font-size: 25px;">Find people you know</p>
+                    </div>
                 </div>
-                <div class="bg-warning">
-                    <p style="margin-left: 20px; text-align: center; height: 45px; padding-bottom: 7px; font-size: 25px;">Find people you know</p>
-                </div>
-            </div>
-        </main>
-
-        <script src="script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-                crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-                crossorigin="anonymous">
-        </script>
+            </main>
+        
+            <script src="script.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                    crossorigin="anonymous">
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous">
+            </script>
+        </div>
     </body>
 </html>
