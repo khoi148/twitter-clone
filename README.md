@@ -1,6 +1,6 @@
 # CoderSchool FTW - * Twitter Page Clone *
 
-Created with love by: `Khoi Phan`
+Created with love by: `Khoi Phan` Collaborator 'Minh Vu'
   
 View online at: `https://twitter-clone-coderschool.netlify.com`
   
