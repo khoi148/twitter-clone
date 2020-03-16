@@ -41,43 +41,41 @@
             </div>
 
             <main class="row">
-                <div class="col-4 border">
-                    <div class="meta-tweet">
-                        <div class="bg-dark" style="display: flex; justify-content: center; align-content: center;">
-                            <img src="./img/twitter0.png" style="width: 200px;">
+                <div class="col-4">
+                    <div class="meta-tweet border rounded border-light">
+                        <div class="bg-light p-2" style="display: flex; justify-content: center; align-content: center;">
+                            <img class="img-fluid" src="./img/twitter0.png" style="width: 220px; height:60px;">
                         </div>
-                        <div class="sth" style=" display: flex; flex-wrap: nowrap; justify-content: space-evenly;">
-                            <span class="tweets_amount" style="margin-top: 17px;"></span>
-                            <p style="text-align: center; margin-top: 20px;"> | FOLLOWING: <span style="color: blue;">251</span> | 
-                               FOLLOWER: <span style="color: blue;">153</span>
-                            </p>
+                        <div class="p-2 d-flex justify-content-center align-items-center" >
+                            <span id="tweets_amount" class="text-dark mx-2">TWEETS: 0</span>
+                            <span class="p-0">| FOLLOWING: </span>
+                            <span class="mx-2">251</span> | 
+                            <span class="mx-2"> FOLLOWER: </span>
+                            <span>153</span>
                         </div>
                     </div>
 
-                    <div class="trends">
-                        <h2 style="margin-left: 20px; margin-top: 10px;">Trends <span style="font-size: 25px;">ciao</span></h2>
-                        <ul>
-                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="#">#Lorem ipsum dolor sit amet.</a></li>
+                    <div class="text-center border border-light rounded mt-3">
+                        <h2 class="text-dark">Trends</h2>
+                        <ul class="pr-4">
+                            <li><a href="#">#Corona Virus</a></li>
+                            <li><a href="#">#Covid-19</a></li>
+                            <li><a href="#">#JordanPeterson</a></li>
+                            <li><a href="#">#Beyonce&Shakira</a></li>
+                            <li><a href="#">#BLACKPINK</a></li>
+                            <li><a href="#">#SHAWNMENDES</a></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-4 border">
-                    <div class="bg-lightskyblue p-3 border border-dark">
-                        <div class="d-flex border">
+                <div class="col-4">
+                    <div class="bg-lightskyblue p-3 border border-light rounded mb-3">
+                        <div class="d-flex">
                             <img src="img/pic2.jpg" height="35" class="rounded">
                             <textarea id="contentsBox" placeholder="Remember, be nice!" class="flex-grow-1"></textarea>
                         </div>
-                        <div class="d-flex flex-row-reverse">
-                            <button onClick="tweet()">Tweet</button>
+                        <div class="d-flex flex-row-reverse my-2">
+                            <button class="btn btn-light text-dark" onClick="tweet()">Tweet</button>
                         </div>
                         <div class="d-flex flex-row-reverse">
                             <div id="textCount">140chars</div>
@@ -85,57 +83,37 @@
                         </div>
                     </div>
 
-                    <div id="tweetArea" class="border border-info wrapword">
-                        <div id="tweet" class="d-flex">
-                            <div class="bg-transparent p-3" style="margin-top: 7px;">
-                                <img src="img/pic2.jpg" height="50" class="rounded">
-                            </div>
-                            <div class="flex-grow-1 bg-lightskyblue" style="padding-top: 20px; padding-right: 10px">
-                                <div>Lorem ipsum dolor sit amet, consectetur adipi
-                                    sicing elit. Corrupti iste nulla veritatis minima dou
-                                    ptatem maiores quissdfsdf dalw asinb?
-                                </div>
-                                <div class="d-flex" style="margin-top: 10px;">
-                                    <button class="btn tweetBtn mx-2"><i class="fa fa-home"></i></button>
-                                    <button class="btn tweetBtn mx-2"><i class="fa fa-bars"></i></button>
-                                    <button class="btn tweetBtn mx-2"><i class="fa fa-trash"></i></button>
-                                    <button class="btn tweetBtn mx-2"><i class="fa fa-close"></i></button>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="tweetArea" class="wrapword">
                     </div>
                 </div>
                 
-                <div class="col-4 border">
-                    <div class="following">
-                        <h2 style="margin-left: 20px; margin-top: 10px;">Who To Follow <a href="#" style="font-size: 25px;">Refresh . View all</a></h2>
+                <div class="col-4">
+                    <div class="following border border-light rounded">
+                        <h2 class="p-3 bg-light twitterColor">Who To Follow</h2>
                         <div class="follower">
                             <a href="https://placeholder.com" style="margin-left: 25px;"><img src="https://via.placeholder.com/80"></a>
-                            <div class="sth">
-                                <p style="font-size: 20px; margin-left: 30px; margin-top: 23px; margin-bottom: 0;">Lorem ipsum dolor sit amet.</p>
-                                <button style="margin-left: 30px;">Follow</button>
+                            <div class="ml-3">
+                                <p class="">Pewdiepie</p>
+                                <button class="btn btn-light">Follow</button>
                             </div>                                               
-                        </div>                       
+                        </div>   
                         <div class="follower">
                             <a href="https://placeholder.com" style="margin-left: 25px;"><img src="https://via.placeholder.com/80"></a>
-                            <div class="sth">
-                                <p style="font-size: 20px; margin-left: 30px; margin-top: 23px; margin-bottom: 0;">Lorem ipsum dolor sit amet.</p>
-                                <button style="margin-left: 30px;">Follow</button>
-                            </div>
-                        </div>
+                            <div class="ml-3">
+                                <p class="">Beyonce</p>
+                                <button class="btn btn-light">Follow</button>
+                            </div>                                               
+                        </div>     
                         <div class="follower">
                             <a href="https://placeholder.com" style="margin-left: 25px;"><img src="https://via.placeholder.com/80"></a>
-                            <div class="sth">
-                                <p style="font-size: 20px; margin-left: 30px; margin-top: 23px; margin-bottom: 0;">Lorem ipsum dolor sit amet.</p>
-                                <button style="margin-left: 30px;">Follow</button>
-                            </div>
-                        </div>
+                            <div class="ml-3">
+                                <p class="">Donald Trump</p>
+                                <button class="btn btn-light">Follow</button>
+                            </div>                                               
+                        </div>                         
                     </div>
-                    <div class="bg-dark text-white">
-                        <a href="#" style="display: flex; justify-content: center; height: 45px; padding-bottom: 7px; 
-                        font-size: 25px; color: #f4f4f4; text-decoration: none;">Find people you know</a>
-                    </div>
-                    <div class="bottom border border-dark" style="margin-top: 20px; padding-top: 20px; text-align: center; font-size: 15px;">
+                    
+                    <div class="border border-light rounded text-center p-3" style="font-size: 15px;">
                         <p>&copy; 2020 Twitter |
                            <a href="#">About</a> | 
                            <a href="#">Help</a> |
@@ -149,6 +127,17 @@
                     </div>
                 </div>
             </main>
+
+            <footer>
+                <div class="py-2 d-flex justify-content-center bg-secondary">
+                  <bold class="text-white px-2"> Made by Khoi Phan & Minh Vu</bold>
+                  <a
+                    class="text-warning"
+                    href="https://github.com/khoi148/twitter-clone/blob/master/README.md"
+                    >Github link</a
+                  >
+                </div>
+              </footer>
         
             <script src="script.js"></script>
             <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

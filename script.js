@@ -6,7 +6,7 @@ const limitReachText = document.getElementById('limitReachText');
 
 const tweetArea = document.getElementById('tweetArea');
 
-const tweets_amt = document.querySelector('.tweets_amount');
+const tweets_amt = document.getElementById('tweets_amount');
 
 const TWEET_LIMIT = 140;
 
@@ -73,7 +73,7 @@ function render(list) {
         }
         arrayOfURLs !== null ? imageSection = `<div class="">${imgLink}</div>` : imageSection = '';
 
-        return `<div id="tweet" class="d-flex border border-dark">
+        return `<div id="tweet" class="d-flex border border-light rounded">
                     <div class="bg-transparent p-3" style="margin-top: 7px;">
                         <img src="img/pic2.jpg" height="50" class="rounded">
                     </div>
@@ -82,9 +82,8 @@ function render(list) {
                         ${imageSection}
                         <div class="d-flex tweetButtonsSection" style="margin-top: 10px;">
                             <button class="btn ${isLikedVar} tweetBtn mx-2" onClick="tweetLiked(this.id)" id="${item.id}"><i class="fa fa-heart"></i></button>
-                            <button class="btn tweetBtn mx-2" onClick="retweet(this.value)" value="${item.id}"><i class="fa fa-bars"></i></button>
-                            <button class="btn tweetBtn mx-2" onClick="tweetDelete(${item.id})"><i class="fa fa-trash"></i></button>
-                            <button class="btn tweetBtn mx-2"><i class="fa fa-close"></i></button>
+                            <button class="btn tweetBtn mx-2" onClick="retweet(this.value)" value="${item.id}"><i class="fa fa-retweet"></i></button>
+                            <button class="btn tweetBtn mx-2" onClick="tweetDelete(${item.id})"><i class="fa fa-close"></i></button>
                         </div>
                     </div>
                 </div>`;
@@ -92,7 +91,7 @@ function render(list) {
 
     tweetArea.innerHTML = result;
     
-    tweets_amt.innerHTML = `<h4>TWEETS: ${listOfTweets.length}</h4>`;
+    tweets_amt.innerHTML = `<span>TWEETS: ${listOfTweets.length} </span>`;
 }
 
 function tweet() {

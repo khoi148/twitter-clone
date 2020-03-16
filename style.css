@@ -14,7 +14,7 @@ body {
     font-family: evfont;
     /* background-color: lightskyblue; */
     white-space: normal;
-    font: 400 .9em/1.5 "Nobile", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 400 .9em/1.5 Arial, sans-serif;
     color: #104c5f;
     background: #bae5f6;
     background-image: url('../img/background.png');
@@ -33,12 +33,16 @@ textarea {
     height: 35px;
 }
 
+.twitterColor {
+    color: rgb(83, 192, 255);
+}
+
 .tweetBtn {
     background-color: transparent;
     border: none;
     color: black;
     padding: 0px;
-    font-size: 16px;
+    font-size: 22px;
     cursor: pointer;
 }
 
@@ -83,15 +87,8 @@ textarea {
 
 .meta-tweet {
     border: 1px solid black;
-    height: 100px;
 }
 
-.trends {
-    margin-top: 30px;
-    margin-bottom: 300px;
-    border: 1px solid black;
-    height: 270px;
-}
 
 ul li {list-style-type: none;}
 
@@ -141,4 +138,10 @@ h1 span {
       /* margin-top: -105px; */
       font-size: 60px;
     }
+}
+
+footer {
+    position: fixed;
+    width:100%;
+    bottom: 0;
 }
