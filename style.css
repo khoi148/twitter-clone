@@ -41,12 +41,13 @@ textarea {
     font-size: 16px;
     cursor: pointer;
 }
+
 .tweetBtn:hover {
     color:royalblue;
 }
 
 .tweetButtonsSection > button {
-    color: white;
+    color: darkslategray;
 }
 
 .tweetButtonsSection > button:hover {
@@ -69,7 +70,7 @@ textarea {
 }
 
 .wrapword {
-     /* These are technically the same, but use both */
+  /* These are technically the same, but use both */
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
@@ -77,25 +78,34 @@ textarea {
   word-break: break-all;
   /* Instead use this non-standard one: */
   word-break: break-word;
+  font-size: 25px;
 }
 
 .meta-tweet {
     border: 1px solid black;
-    height: 200px;
+    height: 100px;
 }
 
 .trends {
     margin-top: 30px;
+    margin-bottom: 300px;
     border: 1px solid black;
-    height: 350px;
+    height: 270px;
 }
 
 ul li {list-style-type: none;}
 
 .following {
-    margin-top: 30px;
     border: 1px solid black;
-    height: 350px;
+    height: 390px;
+    padding: 0;
+    margin: 0;
+}
+
+.follower {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 20px auto;
 }
 
 /* floating clouds */
@@ -105,8 +115,6 @@ ul li {list-style-type: none;}
 }
 
 h1 {
-    /* margin-top: 20px;
-    margin-bottom: 20px; */
     font-weight: 700;
     font-size: 65px;
     letter-spacing: -.01em;

@@ -73,14 +73,14 @@ function render(list) {
         }
         arrayOfURLs !== null ? imageSection = `<div class="">${imgLink}</div>` : imageSection = '';
 
-        return `<div id="tweet" class="d-flex">
-                    <div class="bg-success p-3">
+        return `<div id="tweet" class="d-flex border border-dark">
+                    <div class="bg-transparent p-3" style="margin-top: 7px;">
                         <img src="img/pic2.jpg" height="50" class="rounded">
                     </div>
-                    <div class="flex-grow-1 bg-secondary" style="width: 300px;">
-                        <div class="wrapword bg-success">${content}</div>
+                    <div class="flex-grow-1 bg-lightskyblue" style="width: 300px; padding-top: 20px; padding-right: 10px">
+                        <div class="wrapword bg-transparent text-monospace">${content}</div>
                         ${imageSection}
-                        <div class="d-flex tweetButtonsSection">
+                        <div class="d-flex tweetButtonsSection" style="margin-top: 10px;">
                             <button class="btn ${isLikedVar} tweetBtn mx-2" onClick="tweetLiked(this.id)" id="${item.id}"><i class="fa fa-heart"></i></button>
                             <button class="btn tweetBtn mx-2" onClick="retweet(this.value)" value="${item.id}"><i class="fa fa-bars"></i></button>
                             <button class="btn tweetBtn mx-2" onClick="tweetDelete(${item.id})"><i class="fa fa-trash"></i></button>

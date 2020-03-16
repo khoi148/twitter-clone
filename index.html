@@ -43,13 +43,15 @@
             <main class="row">
                 <div class="col-4 border">
                     <div class="meta-tweet">
-                        <div class="bg-warning" style="display: flex; justify-content: center; align-content: center;">
+                        <div class="bg-dark" style="display: flex; justify-content: center; align-content: center;">
                             <img src="./img/twitter0.png" style="width: 200px;">
                         </div>
-                        <div class="tweets_amount" style="margin-left: 20px; margin-top: 25px;"></div>
-                        <p style="text-align: center;">FOLLOWING: <span style="color: blue;">251</span> | 
-                        FOLLOWER: <span style="color: blue;">153</span>
-                        </p>
+                        <div class="sth" style=" display: flex; flex-wrap: nowrap; justify-content: space-evenly;">
+                            <span class="tweets_amount" style="margin-top: 17px;"></span>
+                            <p style="text-align: center; margin-top: 20px;"> | FOLLOWING: <span style="color: blue;">251</span> | 
+                               FOLLOWER: <span style="color: blue;">153</span>
+                            </p>
+                        </div>
                     </div>
 
                     <div class="trends">
@@ -69,7 +71,7 @@
                 </div>
 
                 <div class="col-4 border">
-                    <div class="bg-warning p-3">
+                    <div class="bg-lightskyblue p-3 border border-dark">
                         <div class="d-flex border">
                             <img src="img/pic2.jpg" height="35" class="rounded">
                             <textarea id="contentsBox" placeholder="Remember, be nice!" class="flex-grow-1"></textarea>
@@ -83,23 +85,22 @@
                         </div>
                     </div>
 
-                    <div id="tweetArea" class="border border-primary wrapword" class="bg-light">
+                    <div id="tweetArea" class="border border-info wrapword">
                         <div id="tweet" class="d-flex">
-                            <div class="bg-success p-3">
+                            <div class="bg-transparent p-3" style="margin-top: 7px;">
                                 <img src="img/pic2.jpg" height="50" class="rounded">
                             </div>
-                            <div class="flex-grow-1 bg-secondary">
+                            <div class="flex-grow-1 bg-lightskyblue" style="padding-top: 20px; padding-right: 10px">
                                 <div>Lorem ipsum dolor sit amet, consectetur adipi
                                     sicing elit. Corrupti iste nulla veritatis minima dou
-                                    ptatem maiores quissdfsdf dalw asinb?</div>
-                                <div class="d-flex">
+                                    ptatem maiores quissdfsdf dalw asinb?
+                                </div>
+                                <div class="d-flex" style="margin-top: 10px;">
                                     <button class="btn tweetBtn mx-2"><i class="fa fa-home"></i></button>
                                     <button class="btn tweetBtn mx-2"><i class="fa fa-bars"></i></button>
                                     <button class="btn tweetBtn mx-2"><i class="fa fa-trash"></i></button>
                                     <button class="btn tweetBtn mx-2"><i class="fa fa-close"></i></button>
                                 </div>
-
-                                <ul class="timeline"></ul>
                             </div>
                         </div>
                     </div>
@@ -108,12 +109,43 @@
                 <div class="col-4 border">
                     <div class="following">
                         <h2 style="margin-left: 20px; margin-top: 10px;">Who To Follow <a href="#" style="font-size: 25px;">Refresh . View all</a></h2>
-                        <div class="follower"></div>
-                        <div class="follower"></div>
-                        <div class="follower"></div>
+                        <div class="follower">
+                            <a href="https://placeholder.com" style="margin-left: 25px;"><img src="https://via.placeholder.com/80"></a>
+                            <div class="sth">
+                                <p style="font-size: 20px; margin-left: 30px; margin-top: 23px; margin-bottom: 0;">Lorem ipsum dolor sit amet.</p>
+                                <button style="margin-left: 30px;">Follow</button>
+                            </div>                                               
+                        </div>                       
+                        <div class="follower">
+                            <a href="https://placeholder.com" style="margin-left: 25px;"><img src="https://via.placeholder.com/80"></a>
+                            <div class="sth">
+                                <p style="font-size: 20px; margin-left: 30px; margin-top: 23px; margin-bottom: 0;">Lorem ipsum dolor sit amet.</p>
+                                <button style="margin-left: 30px;">Follow</button>
+                            </div>
+                        </div>
+                        <div class="follower">
+                            <a href="https://placeholder.com" style="margin-left: 25px;"><img src="https://via.placeholder.com/80"></a>
+                            <div class="sth">
+                                <p style="font-size: 20px; margin-left: 30px; margin-top: 23px; margin-bottom: 0;">Lorem ipsum dolor sit amet.</p>
+                                <button style="margin-left: 30px;">Follow</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-warning">
-                        <p style="margin-left: 20px; text-align: center; height: 45px; padding-bottom: 7px; font-size: 25px;">Find people you know</p>
+                    <div class="bg-dark text-white">
+                        <a href="#" style="display: flex; justify-content: center; height: 45px; padding-bottom: 7px; 
+                        font-size: 25px; color: #f4f4f4; text-decoration: none;">Find people you know</a>
+                    </div>
+                    <div class="bottom border border-dark" style="margin-top: 20px; padding-top: 20px; text-align: center; font-size: 15px;">
+                        <p>&copy; 2020 Twitter |
+                           <a href="#">About</a> | 
+                           <a href="#">Help</a> |
+                           <a href="#">Terms</a> |
+                           <a href="#">Privacy</a> |
+                           <a href="#">Cookies</a> |
+                           <a href="#">Ads Info</a> |
+                           <a href="#">Brand</a> |
+                           <a href="#">Blog</a>
+                        </p>
                     </div>
                 </div>
             </main>
